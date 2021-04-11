@@ -377,6 +377,9 @@ Within netrw, :lcd to the currently edited directory [|vinegar|]: >
 
 netrw:
 --------------
+Within netrw, return (exit) to the last buffer [|netrw|]: >
+  <C-^>  (or <C-6>)
+
 Open netrw in a leftside split that stays there [|netrw|]: >
   :Lexplore
 < or, for short: >
@@ -393,11 +396,6 @@ Within netrw, to switch how the files are listed [|netrw|]: >
 
 Within netrw, open a file in a vertical split [|netrw|]: >
   v
-
-Within netrw, return to the last buffer [|netrw|]: >
-  <C-^>
-Within netrw, return to the last buffer (my own mapping) [|netrw|]: >
-  <esc>
 
 
 netrw has a "tree view" listing that is set to default as follows:
