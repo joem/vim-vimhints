@@ -14,3 +14,4 @@ To install, use a plugin manager or use Vim's built-in package support (see `:h 
 
 (If installing manually or with Vim's package support, be sure to run `:helptags ALL` after installation so that `:h vimhints` will work.)
 
+You may also wish to symlink the main help file (doc/vimhints.txt) to somewhere handy, like your root directory.
