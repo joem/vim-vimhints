@@ -45,8 +45,9 @@ Table of contents:               (hit CTRL-] to follow a link)
 1. Movement                     |vimhints_movement|
 2. Editing                      |vimhints_editing|
 3. Searching                    |vimhints_searching|
-4. Plugins                      |vimhints_plugins|
-5. Miscelaneous or Unsorted     |vimhints_misc|
+4. Splits/Tabs/Windows          |vimhints_splits_tabs_windows|
+5. Plugins                      |vimhints_plugins|
+6. Miscelaneous or Unsorted     |vimhints_misc|
 
 ------------------------------------------------------------------------------
 How to format this file:
@@ -325,9 +326,95 @@ Convert a line like 'Artist - Song' to '"Song" - Artist': >
   :%s/\(^.*\) - \(.*$\)/"\2" - \1/
 
 
+==============================================================================
+4. Splits/Tabs/Windows                         *vimhints_splits_tabs_windows*
+------------------------------------------------------------------------------
+
+(I use the terms 'split' and 'window' somewhat interchangably. Vim doesn't
+really have any interactions between true windows (since that's a GUI
+implementation, not a Vim thing) so there aren't any notes about true windows.)
+
+Switch to window in direction h (or j, or k, or l): >
+  <C-w> h       (or j, or k, or l)
+
+Switch between open windows in sequence: >
+  <C-w w>
+< or: >
+  <C-w> <C-w>
+
+horizontal split of current window: >
+  <C-w> s
+< or: >
+  :split
+< or: >
+  :sp
+new horizontal split window: >
+  <C-w> n
+< or: >
+  :new
+vertical split of current window: >
+  <C-w> v
+< or: >
+  :vsplit
+< or: >
+  :vs
+new vertical split window: >
+  :vnew
+< or: >
+  :vne
+quit/close a window: >
+  <C-w> q
+< or: >
+  :q
+
+Make the current window the only one on the screen.  All other windows are closed: >
+  <C-w> o
+< or: >
+  :only
+< or: >
+  :on
+
+make all windows fairly equally sized: >
+  <C-w> =
+decrease height of current window: >
+  <C-w> -  (dash)
+increase height of current window: >
+  <C-w> +
+increase height of current window to the max: >
+  <C-w> _  (underscore)
+
+decrease width of current window: >
+  <C-w> <
+increase width of current window: >
+  <C-w> >
+increase width of current window to the max: >
+  <C-w> |  (pipe)
+
+Make a horizontal split be a vertical split: >
+  <C-w>H
+Make a vertical split be a horizontal split: >
+  <C-w>K
+(Might need to do <C-w>t <C-w>K or <C-w>t <C-w>H in the above switches, maybe.)
+
+The following commands open the file name under the cursor:
+  gf    open in the same window ("goto file")
+  <c-w>f    open in a new window
+  <c-w>gf    open in a new tab 
+You can return to the previous buffer using Ctrl-^ or Ctrl-o.
+
+To open the help in its own tab: >
+   :tab help SOME_TOPIC_TO_FIND
+
+
+:vnew
+make a new vsplit with an empty buffer
+
+<C-w>r
+rotate the splits (when you only have two, it swaps them)
+
 
 ==============================================================================
-4. Plugins                                              *vimhints_plugins*
+5. Plugins                                              *vimhints_plugins*
 ------------------------------------------------------------------------------
 
 pathogen:
@@ -469,7 +556,7 @@ Toggle comment on a visual selection [|commentary|]: >
 
 
 ==============================================================================
-5. Miscelaneous or Unsorted                             *vimhints_misc*
+6. Miscelaneous or Unsorted                             *vimhints_misc*
 ------------------------------------------------------------------------------
 
 Follow a tag link (like in a help file): >
@@ -512,14 +599,6 @@ Same as :Sex but not in a split window: >
   :Ex
 < or: >
   :e .
-
-Switch to window in direction h (or j, or k, or l): >
-  <C-w> h       (or j, or k, or l)
-
-Switch between open windows in sequence: >
-  <C-w w>
-< or: >
-  <C-w> <C-w>
 
 Re-tab selected text (like pressing =): >
   :ret
@@ -873,60 +952,6 @@ Go to man page of word under cursor: >
   K
 Go to the definition or declaration of a function or variable under cursor: >
   gd
-
-horizontal split of current window: >
-  <C-w> s
-< or: >
-  :split
-< or: >
-  :sp
-new horizontal split window: >
-  <C-w> n
-< or: >
-  :new
-vertical split of current window: >
-  <C-w> v
-< or: >
-  :vsplit
-< or: >
-  :vs
-new vertical split window: >
-  :vnew
-< or: >
-  :vne
-quit/close a window: >
-  <C-w> q
-< or: >
-  :q
-
-Make the current window the only one on the screen.  All other windows are closed: >
-  <C-w> o
-< or: >
-  :only
-< or: >
-  :on
-
-make all windows fairly equally sized: >
-  <C-w> =
-decrease height of current window: >
-  <C-w> -  (dash)
-increase height of current window: >
-  <C-w> +
-increase height of current window to the max: >
-  <C-w> _  (underscore)
-
-decrease width of current window: >
-  <C-w> <
-increase width of current window: >
-  <C-w> >
-increase width of current window to the max: >
-  <C-w> |  (pipe)
-
-Make a horizontal split be a vertical split: >
-  <C-w>H
-Make a vertical split be a horizontal split: >
-  <C-w>K
-(Might need to do <C-w>t <C-w>K or <C-w>t <C-w>H in the above switches, maybe.)
 
 Delete trailing whitespace: >
   s/\s\+$//
